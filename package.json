@@ -1,0 +1,44 @@
+{
+  "name": "playwright-func-error",
+  "version": "1.0.0",
+  "description": "Demo error in Playwright component testing",
+  "license": "MIT",
+  "author": {
+    "name": "ilbrando"
+  },
+  "main": "lib/index.js",
+  "module": "lib/index.mjs",
+  "type": "module",
+  "types": "lib/index.d.ts",
+  "exports": {
+    "require": "./lib/index.cjs",
+    "import": "./lib/index.js",
+    "types": "./lib/index.d.ts"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "dev": "run-p vite type-check",
+    "vite": "vite",
+    "type-check": "tsc --noEmit --watch",
+    "build": "vite build && tsc -p tsconfig-declarations.json",
+    "test": "playwright test -c playwright-ct.config.ts"
+  },
+  "devDependencies": {
+    "@playwright/experimental-ct-react": "~1.49.0",
+    "@playwright/test": "~1.49.0",
+    "@types/node": "~20.12.12",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@vitejs/plugin-react": "~4.3.3",
+    "eslint": "~9.4.0",
+    "npm-run-all": "~4.1.5",
+    "typescript": "~5.4.5",
+    "vite": "~5.4.11"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  }
+}
